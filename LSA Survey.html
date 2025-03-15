@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Styles Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #444;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .question p {
+      margin: 0 0 10px;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .results {
+      margin-top: 20px;
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .results p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Learning Styles Survey</h1>
+    <form id="surveyForm">
+      <!-- All 25 Questions -->
+      <div class="question">
+        <p>1. I find it easier to understand information when it is presented in charts or graphs.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>2. I enjoy participating in group discussions or debates to understand topics better.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>3. I learn best when I can move around and engage in hands-on activities.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>4. I prefer reading textbooks or written instructions to learn.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>5. I prefer using diagrams, maps, or pictures to help explain ideas.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>6. I find it helpful to repeat information out loud to remember it.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>7. I like explaining concepts verbally to others to solidify my understanding.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>8. I can easily recall material I have read or written down.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>9. I retain information better when I can move around or take breaks.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>10. I enjoy working with lists, outlines, or written schedules.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>11. I remember details better when I see them written or illustrated.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>12. I prefer audiobooks or podcasts over reading text.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>13. I enjoy role-playing or acting out scenarios to understand concepts.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>14. I enjoy watching videos or demonstrations to learn new concepts.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>15. I like using flashcards with words or definitions to study.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>16. I find writing notes or summaries an effective way to retain information.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>17. I prefer building or creating something as part of my learning process.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>18. I struggle to sit still for long periods while learning.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>19. I notice small details in images, graphs, or written material.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>20. I can easily recall information I heard in a lecture or conversation.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>21. I prefer reading detailed explanations rather than watching videos.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>22. I like explaining concepts to others to solidify my understanding.</p>
+        <select data-category="Auditory">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>23. I enjoy participating in physical activities to learn new concepts.</p>
+        <select data-category="Kinesthetic">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>24. I prefer using flowcharts or mind maps to study.</p>
+        <select data-category="Visual">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <div class="question">
+        <p>25. I feel more confident when I write my thoughts rather than speaking them.</p>
+        <select data-category="Reading/Writing">
+          <option value="0">Select</option>
+          <option value="1">Strongly Disagree</option>
+          <option value="2">Disagree</option>
+          <option value="3">Neutral</option>
+          <option value="4">Agree</option>
+          <option value="5">Strongly Agree</option>
+        </select>
+      </div>
+      <button type="button" onclick="calculateResults()">Submit</button>
+    </form>
+    <div id="results" class="results" style="display: none;">
+      <h2>Your Learning Style Results</h2>
+      <p id="visualResult">Visual: 0%</p>
+      <p id="auditoryResult">Auditory: 0%</p>
+      <p id="kinestheticResult">Kinesthetic: 0%</p>
+      <p id="readingWritingResult">Reading/Writing: 0%</p>
+    </div>
+  </div>
+  <script>
+    function calculateResults() {
+      const form = document.getElementById("surveyForm");
+      const selects = form.querySelectorAll("select");
+      const totals = { Visual: 0, Auditory: 0, Kinesthetic: 0, "Reading/Writing": 0 };
+
+      // Sum up the scores for each category
+      selects.forEach((select) => {
+        const value = parseInt(select.value) || 0; // Default to 0 if no value selected
+        const category = select.getAttribute("data-category");
+        totals[category] += value;
+      });
+
+      // Calculate normalized percentages (total adds to 100%)
+      const totalScore = Object.values(totals).reduce((a, b) => a + b, 0);
+      const percentages = {
+        Visual: ((totals.Visual / totalScore) * 100).toFixed(2),
+        Auditory: ((totals.Auditory / totalScore) * 100).toFixed(2),
+        Kinesthetic: ((totals.Kinesthetic / totalScore) * 100).toFixed(2),
+        "Reading/Writing": ((totals["Reading/Writing"] / totalScore) * 100).toFixed(2),
+      };
+
+      // Display results
+      document.getElementById("visualResult").textContent = `Visual: ${percentages.Visual}%`;
+      document.getElementById("auditoryResult").textContent = `Auditory: ${percentages.Auditory}%`;
+      document.getElementById("kinestheticResult").textContent = `Kinesthetic: ${percentages.Kinesthetic}%`;
+      document.getElementById("readingWritingResult").textContent = `Reading/Writing: ${percentages["Reading/Writing"]}%`;
+
+      document.getElementById("results").style.display = "block";
+    }
+  </script>
+</body>
+</html>
